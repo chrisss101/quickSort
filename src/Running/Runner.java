@@ -4,7 +4,7 @@ import Setup.QuickSort;
 public class Runner {
     public static void main(String[] arr) {
         int[] array = new int[10];
-        array[0] = 4;
+        array[0] = 1;
         array[1] = 3;
         array[2] = 7;
         array[3] = 5;
@@ -14,7 +14,7 @@ public class Runner {
         array[7] = 3;
         array[8] = 6;
         array[9] = 1;
-        QuickSort.QuickSort(array,3,7);
+        QuickSort.QuickSort(array,1,9);
         for (int i = 0; i < array.length;i++) {
             System.out.println(array[i]);
         }

@@ -4,6 +4,7 @@ public class QuickSort {
     public static void QuickSort(int[] arr, int left, int right) {
         if (left < right) {
                 int pivot = partition(arr,left,right);
+
                 QuickSort(arr,left,pivot-1);
                 QuickSort(arr,pivot+1,right);
 
@@ -12,10 +13,10 @@ public class QuickSort {
 
     public static int partition(int[] arr, int left,int right) {
         int pivot  = arr[right];
-        int j = arr[left-1];
-        int i = 0;
+        int j = left-1;
 
-        for ( i = left; i < right; i++) {
+
+        for ( int i = left; i < right; i++) {
             if (arr[i] < pivot) {
                 j++;
                 int place = arr[j];
@@ -24,9 +25,9 @@ public class QuickSort {
 
             }
         }
-        int place2 = arr[i+1];
-        arr[i+1] = arr[right];
+        int place2 = arr[j+1];
+        arr[j+1] = arr[right];
         arr[right] = place2;
-        return i+1;
+        return j+1;
     }
 }
