@@ -1,7 +1,7 @@
 package Setup;
 
 public class QuickSort {
-    public void QuickSort(int[] arr, int left, int right) {
+    public static void QuickSort(int[] arr, int left, int right) {
         if (left < right) {
                 int pivot = partition(arr,left,right);
                 QuickSort(arr,left,pivot-1);
@@ -10,17 +10,17 @@ public class QuickSort {
         }
     }
 
-    public int partition(int[] arr, int left,int right) {
+    public static int partition(int[] arr, int left,int right) {
         int pivot  = arr[right];
         int j = arr[left-1];
         int i = 0;
 
         for ( i = left; i < right; i++) {
-            if (arr[j] < pivot) {
-                i++;
-                int place = j;
-                j = i;
-                i = pivot;
+            if (arr[i] < pivot) {
+                j++;
+                int place = arr[j];
+                arr[j] = arr[i];
+                arr[i] = place;
 
             }
         }
